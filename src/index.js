@@ -1,12 +1,14 @@
 module.exports = function check(str, bracketsConfig) {
-  for (let i = 0; i < bracketsConfig.length; i++) {
-    let brackets = bracketsConfig[i].join('');
+let res;
+ for (let i = 0; i < bracketsConfig.length; i++) {
+    let elemConfig = bracketsConfig[i].join('');
 
-    while (str.includes(brackets)) {
-      str = str.replace(brackets, '');
+    while (str.includes(elemConfig)) {
+      str = str.replace(elemConfig, '')
       i = -1;
-    }  
-   }
-   return str ? false : true;
+    }
+ }
+
+return str ? false : true;
 }
 
